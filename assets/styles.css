@@ -1,0 +1,138 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to right, #ffffff, #ffffff);
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.0);
+}
+
+.logo-container {
+    margin-bottom: 20px;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #ffffff;
+    border: 2px solid #e1e5e9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    width: 80%;
+    height: auto;
+}
+
+#linksContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#socialLinks {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#socialLinks li {
+    margin: 10px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#socialLinks a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 320px;
+    height: 40px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color: #0056b3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+#socialLinks a:hover {
+    background-color: #003d7a;
+    color: #e0e0e0;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+#socialLinks i {
+    margin-right: 8px;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.whatsapp-container {
+    display: flex;
+    gap: 10px; /* Espacio entre los íconos de WhatsApp */
+}
+
+/* Estilos específicos para los botones de WhatsApp */
+.whatsapp-item {
+    background-color: #25D366; /* Color verde típico de WhatsApp */
+    font-size: 14px; /* Mismo tamaño de fuente que los otros botones */
+    height: 40px; /* Mismo tamaño de altura que los otros botones */
+    padding: 8px 16px; /* Padding igual que los otros botones */
+    border-radius: 8px; /* Bordes redondeados igual que los otros botones */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.whatsapp-item:hover {
+    background-color: #128C7E; /* Color verde oscuro al pasar el ratón */
+    color: #e0e0e0;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos responsive */
+@media (max-width: 768px) {
+    #socialLinks a {
+        font-size: 12px;
+        width: calc(100% - 20px);
+        max-width: 280px;
+    }
+}
+
+@media (max-width: 480px) {
+    #socialLinks a {
+        font-size: 10px;
+        width: calc(100% - 16px);
+        max-width: 240px;
+    }
+}
