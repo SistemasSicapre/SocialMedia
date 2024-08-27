@@ -98,7 +98,7 @@ body {
     height: 40px;
     padding: 8px 16px;
     border-radius: 20px;
-    background-color: #3498db;
+    background-color: #2082c3;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     animation: fadeIn 1s ease-out;
@@ -108,7 +108,7 @@ body {
 .whatsapp-item:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    background-color: #2980b9;
+    background-color: #0f4b72;
 }
 
 #socialLinks i {
@@ -127,11 +127,11 @@ body {
     flex: 1;
     max-width: 48%;
     margin: 0 4px;
-    background-color: #25D366;
+    background-color: #25d336;
 }
 
 .whatsapp-item:hover {
-    background-color: #128C7E;
+    background-color: #0d2da0;
 }
 
 @media (max-width: 768px) {
