@@ -1,179 +1,201 @@
-@keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #a4a4a4 0%, #ffffff 100%);
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    background: linear-gradient(to bottom, #f7f7f7, #e7e7e7);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
+    min-height: 100vh;
 }
 
 .container {
-    text-align: center;
-    padding: 25px;
-    width: 100%;
-    max-width: 500px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    animation: fadeIn 1s ease-out;
+    padding: 50px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+}
+
+h1 {
+    color: #000000;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.social-link {
+    background-color: rgba(255, 255, 255, 0.431);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.social-link:hover {
+    transform: translateY(-5px);
+    background-color: rgb(255, 255, 255);
+}
+
+.social-link i {
+    font-size: 40px;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.social-link span {
+    color: #000000;
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+.social-link i {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.social-link[data-platform="Facebook"]:hover {
+    background-color: #185df238;
+}
+
+/* Estilos específicos para cada ícono */
+.social-link[data-platform="Facebook"] i {
+    color: #185df2;
+}
+
+.social-link[data-platform="Twitter"]:hover {
+    background-color: #1da0f256;
+}
+
+.social-link[data-platform="Twitter"] i {
+    color: #1DA1F2;
+}
+
+.social-link[data-platform="Instagram"]:hover {
+    background: linear-gradient(45deg, #f5852948, #dd2a7b48, #8234af55, #515cd450);
+}
+
+.social-link[data-platform="Instagram"] i {
+    background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.social-link[data-platform="LinkedIn"]:hover {
+    background-color: #7366ff3d;
+}
+
+.social-link[data-platform="LinkedIn"] i {
+    color: #0077B5;
+}
+
+.social-link[data-platform="Website"]:hover {
+    background-color: #33333340;
+}
+
+.social-link[data-platform="Website"] i {
+    color: #333333;
+}
+
+.social-link[data-platform="WhatsApp"]:hover {
+    background-color: #66ff873d;
+}
+
+.social-link[data-platform="WhatsApp"] i {
+    color: #25D366;
+}
+
+.whatsapp-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 10px;
+    display: none;
+    z-index: 10;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.whatsapp-menu a {
+    display: flex;
+    align-items: center;
+    color: #000000;
+    text-decoration: none;
+    padding: 5px 0;
+    transition: all 0.2s ease;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+.whatsapp-menu a i {
+    color: #25D366; /* Color verde para el ícono de WhatsApp */
+    margin-right: 8px; /* Separación entre el ícono y el texto */
+    font-size: 25px; /* Tamaño del ícono */
+}
+
+.whatsapp-menu a:hover {
+    background-color: #66ff8752;
 }
 
 .logo-container {
-    margin-bottom: 25px;
-    width: 120px;
-    height: 120px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    overflow: hidden;
-    background-color: #ffffff;
-    border: 3px solid #e1e5e9;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-    animation: pulse 2s infinite;
+    position: relative;
+    text-align: center;
+    margin-bottom: -70px;
+    /* Ajusta este valor para controlar la superposición */
+    z-index: 10;
 }
 
 .logo {
-    width: 80%;
+    max-width: 60px;
+    /* Tamaño del logotipo */
     height: auto;
+    border: 9px solid transparent;
+    /* Borde transparente para resaltar el gradiente */
+    border-radius: 50%;
+    /* Hace el logotipo circular */
+    background: linear-gradient(135deg, #00000000, #c4c4c4);
+    /* Fondo degradado para un efecto elegante */
+    padding: 5px;
+    /* Espacio interno para crear la ilusión de un borde más grueso */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.469), inset 0 4px 6px rgba(255, 255, 255, 0.3);
+    /* Sombra externa e interna */
+    position: absolute;
+    top: -35px;
+    /* Ajusta para controlar cuánto se superpone el logotipo */
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-#linksContainer {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-#socialLinks {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-#socialLinks li {
-    margin: 8px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-#socialLinks a,
-.whatsapp-item {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 280px;
-    height: 40px;
-    padding: 8px 16px;
-    border-radius: 20px;
-    background-color: #2082c3;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+/* Opcional: Estilo adicional para resaltar el logo al pasar el cursor */
+.logo:hover {
+    box-shadow: 0 12px 24px rgba(5, 26, 255, 0.129), inset 0 6px 8px rgba(255, 255, 255, 0.4);
+    transform: translateX(-50%) translateY(-5px);
+    /* Leve elevación al pasar el cursor */
     transition: all 0.3s ease;
-    animation: fadeIn 1s ease-out;
 }
 
-#socialLinks a:hover,
-.whatsapp-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    background-color: #0f4b72;
-}
-
-#socialLinks i {
-    margin-right: 8px;
-    font-size: 18px;
-}
-
-.whatsapp-container {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 12px;
-}
-
-.whatsapp-item {
-    flex: 1;
-    max-width: 48%;
-    margin: 0 4px;
-    background-color: #25d336;
-}
-
-.whatsapp-item:hover {
-    background-color: #0d2da0;
-}
 
 @media (max-width: 768px) {
-    .container {
-        padding: 20px;
-    }
-
-    #socialLinks a,
-    .whatsapp-item {
-        font-size: 13px;
-        max-width: 260px;
-        height: 36px;
-    }
-
-    .whatsapp-container {
-        flex-direction: column;
-    }
-
-    .whatsapp-item {
-        max-width: 100%;
-        margin: 4px 0;
+    .social-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
-@keyframes pulse {
-    0% {
-      transform: scale(1);
+
+@media (max-width: 480px) {
+    .social-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
-    50% {
-      transform: scale(1.05);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+}
