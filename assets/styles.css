@@ -11,18 +11,12 @@ body {
     min-height: 100vh;
     background: url(../assets/back.png);
     font-size: 16px;
-}
-
-#principal .float {
-    background: url(../assets/float.png);
+    height: 100vh;
+    position: relative;
+    background-position: center;
     background-repeat: no-repeat;
-    background-size: contain;
-    height: 120vh;
-    width: 13%;
-    position: absolute;
-    top: -50px;
-    right: -41px;
-    z-index: 3;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .container {
@@ -31,6 +25,9 @@ body {
     border-radius: 20px;
     padding: 40px;
     box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    max-width: 800px;
+    width: 90%;
+    margin: 20px;
 }
 
 h1 {
@@ -41,9 +38,10 @@ h1 {
 }
 
 .social-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     gap: 20px;
+    justify-content: center;
 }
 
 .social-link {
@@ -53,6 +51,8 @@ h1 {
     text-align: center;
     transition: all 0.3s ease;
     cursor: pointer;
+    flex: 1 1 200px;
+    max-width: 250px;
     position: relative;
 }
 
@@ -120,20 +120,20 @@ h1 {
 }
 
 .social-link[data-platform="WhatsApp"] i {
-    color: #13d55a;
+    color: #25D366;
 }
 
 .whatsapp-menu {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
     padding: 10px;
     display: none;
     z-index: 10;
     width: 100%;
-    box-shadow: 0 4px 6px rgb(0, 0, 0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .whatsapp-menu a {
@@ -158,68 +158,36 @@ h1 {
 }
 
 .logo-container {
-    position: relative;
     text-align: center;
-    margin-bottom: -70px;
+    margin: 20px 0; /* Espaciado arriba y abajo */
     z-index: 1;
 }
 
 .logo {
-    max-width: 80px;
+    max-width: 120px;
     height: auto;
-    border: 9px solid transparent;
+    border: 5px solid transparent;
     border-radius: 50%;
-    background: linear-gradient(135deg, #ffffff, #c4c4c4);
-    padding: 5px;
-    box-shadow: 0 8px 16px rgb(0, 0, 0), inset 0 4px 6px rgba(255, 255, 255, 0.3);
-    position: absolute;
-    top: -150px;
-    left: 50%;
-    transform: translateX(-50%);
+    background: linear-gradient(135deg, #ffffff, #c4c4c400);
+    padding: 4px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1), inset 0 4px 6px rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
 }
 
-/* Opcional: Estilo adicional para resaltar el logo al pasar el cursor */
 .logo:hover {
     box-shadow: 0 12px 24px rgba(5, 26, 255, 0.129), inset 0 6px 8px rgba(255, 255, 255, 0.4);
-    transform: translateX(-50%) translateY(-5px);
-    transition: all 0.3s ease;
+    transform: translateY(-5px);
 }
 
 /* Responsiveness */
 @media (max-width: 768px) {
-    .social-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .float {
-        display: none;
-    }
-
-    .logo-container {
-        margin-bottom: 0;
-    }
-
     .logo {
-        position: static;
-        margin-top: 20px;
-        transform: none;
+        max-width: 100px;
     }
 }
 
 @media (max-width: 480px) {
-    .social-grid {
-        grid-template-columns: 1fr;
-    }
-
-    body {
-        font-size: 13px;
-    }
-
-    .container {
-        padding: 20px;
-    }
-
     .logo {
-        max-width: 60px;
+        max-width: 80px;
     }
 }
