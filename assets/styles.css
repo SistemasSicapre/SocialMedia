@@ -2,20 +2,34 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #a4a4a4 0%, #ffffff 100%);
+    background: linear-gradient(135deg, #bdc7ff 0%, #ffffff 100%);
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    background: url(../assets/back.png);
+    font-size: 16px;
+}
+
+#principal .float {
+    background: url(../assets/float.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 120vh;
+    width: 13%;
+    position: absolute;
+    top: -50px;
+    right: -41px;
+    z-index: 3;
 }
 
 .container {
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border-radius: 20px;
-    padding: 50px;
+    padding: 40px;
     box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
 }
 
@@ -59,16 +73,10 @@ h1 {
     font-weight: bolder;
 }
 
-.social-link i {
-    font-size: 30px;
-    margin-bottom: 10px;
-}
-
 .social-link[data-platform="Facebook"]:hover {
     background-color: #185df238;
 }
 
-/* Estilos específicos para cada ícono */
 .social-link[data-platform="Facebook"] i {
     color: #185df2;
 }
@@ -112,22 +120,21 @@ h1 {
 }
 
 .social-link[data-platform="WhatsApp"] i {
-    color: #25D366;
+    color: #13d55a;
 }
 
 .whatsapp-menu {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgb(255, 255, 255);
     border-radius: 10px;
     padding: 10px;
     display: none;
     z-index: 10;
     width: 100%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgb(0, 0, 0);
 }
-
 
 .whatsapp-menu a {
     display: flex;
@@ -141,9 +148,9 @@ h1 {
 }
 
 .whatsapp-menu a i {
-    color: #25D366; /* Color verde para el ícono de WhatsApp */
-    margin-right: 8px; /* Separación entre el ícono y el texto */
-    font-size: 25px; /* Tamaño del ícono */
+    color: #25D366;
+    margin-right: 8px;
+    font-size: 25px;
 }
 
 .whatsapp-menu a:hover {
@@ -154,27 +161,19 @@ h1 {
     position: relative;
     text-align: center;
     margin-bottom: -70px;
-    /* Ajusta este valor para controlar la superposición */
-    z-index: 10;
+    z-index: 1;
 }
 
 .logo {
-    max-width: 60px;
-    /* Tamaño del logotipo */
+    max-width: 80px;
     height: auto;
     border: 9px solid transparent;
-    /* Borde transparente para resaltar el gradiente */
     border-radius: 50%;
-    /* Hace el logotipo circular */
-    background: linear-gradient(135deg, #00000000, #c4c4c4);
-    /* Fondo degradado para un efecto elegante */
+    background: linear-gradient(135deg, #ffffff, #c4c4c4);
     padding: 5px;
-    /* Espacio interno para crear la ilusión de un borde más grueso */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.469), inset 0 4px 6px rgba(255, 255, 255, 0.3);
-    /* Sombra externa e interna */
+    box-shadow: 0 8px 16px rgb(0, 0, 0), inset 0 4px 6px rgba(255, 255, 255, 0.3);
     position: absolute;
-    top: -35px;
-    /* Ajusta para controlar cuánto se superpone el logotipo */
+    top: -150px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -183,19 +182,44 @@ h1 {
 .logo:hover {
     box-shadow: 0 12px 24px rgba(5, 26, 255, 0.129), inset 0 6px 8px rgba(255, 255, 255, 0.4);
     transform: translateX(-50%) translateY(-5px);
-    /* Leve elevación al pasar el cursor */
     transition: all 0.3s ease;
 }
 
-
+/* Responsiveness */
 @media (max-width: 768px) {
     .social-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .float {
+        display: none;
+    }
+
+    .logo-container {
+        margin-bottom: 0;
+    }
+
+    .logo {
+        position: static;
+        margin-top: 20px;
+        transform: none;
     }
 }
 
 @media (max-width: 480px) {
     .social-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
+    }
+
+    body {
+        font-size: 13px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .logo {
+        max-width: 60px;
     }
 }
